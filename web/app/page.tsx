@@ -3,7 +3,16 @@
 import { useState } from "react";
 import { BrowserProvider, Contract } from "ethers";
 
-const CONTRACT_ADDRESS = "0x728C467108FD069dB03e270249298Dc10ca355Dc";
+const CONTRACT_ADDRESS =
+  process.env.NEXT_PUBLIC_SIMPLE_STORE_ADDRESS ||
+  "0x0000000000000000000000000000000000000000";
+
+const SEPOLIA_RPC_URL = process.env.NEXT_PUBLIC_SEPOLIA_RPC_URL;
+
+if (!SEPOLIA_RPC_URL) {
+  throw new Error("Falta NEXT_PUBLIC_SEPOLIA_RPC_URL en .env.local");
+}
+
 const simpleStoreAbi = [
   "function getValor() view returns (uint256)",
   "function setValor(uint256 _nuevoValor) external",
@@ -76,9 +85,8 @@ export default function Home() {
                   symbol: "ETH",
                   decimals: 18,
                 },
-                rpcUrls: [
-                  "https://sepolia.infura.io/v3/2216ee58adae4caaa6a904b002a206a6",
-                ],
+                rpcUrls: [SEPOLIA_RPC_URL],
+
                 blockExplorerUrls: ["https://sepolia.etherscan.io"],
               },
             ],
