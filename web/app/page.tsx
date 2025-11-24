@@ -362,6 +362,35 @@ export default function Home() {
             Asegurate de que tu wallet esté en la red <strong>Sepolia</strong>.
           </p>
         </section>
+
+        {/* Footer creador */}
+        <a
+          href="https://www.linkedin.com/in/villarreal-juan"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            marginTop: "1.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            fontSize: "0.8rem",
+            color: "#9ca3af",
+            textDecoration: "none",
+            opacity: 0.8,
+          }}
+        >
+          <img
+            src="https://github.com/xocelot.png"
+            alt="Avatar de Juan (xocelot)"
+            style={{
+              width: "50px",
+              height: "50px",
+              borderRadius: "999px",
+              border: "1px solid #1f2937",
+            }}
+          />
+          <span>Creado por Juan</span>
+        </a>
       </div>
     </main>
   );
