@@ -8,4 +8,11 @@ contract MyToken {
 
     uint8 public decimals;
     uint256 public totalSupply;
+
+    event Transfer();
+    
+
+    function transfer(address to, uint256 amount) public {
+        Transfer()
+    }
 }
